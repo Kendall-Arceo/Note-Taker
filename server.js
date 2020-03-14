@@ -73,9 +73,9 @@ app.put('/api/notes', function (req, res) {
 
 });
 
-app.delete("/api/notes/:id"){
+app.delete('/api/notes/:id', function (req,res){
 
-}
+});
 
 
 // Initializes PORT to be accessed in the URL
