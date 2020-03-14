@@ -5,7 +5,7 @@ var fs = require("fs");
 
 //express app
 var app = express();
-var PORT = process.env.Port || 4000;
+var PORT = process.env.PORT || 4000;
 var arryNewNotes = [];
 
 // Data parsing
