@@ -46,7 +46,7 @@ app.post("/api/notes", function(req, res) {
    
     console.log(newNotes)
 
-    newNotes = JSON.stringify(newNotes)
+    //newNotes = JSON.stringify(newNotes)
 
     fs.appendFile(path.join(__dirname, "../db/db.json"), newNotes, "utf8", (err) => {
       if (err) throw err;
@@ -54,7 +54,13 @@ app.post("/api/notes", function(req, res) {
     });
 
     fs.writeFile(path.join(__dirname, "../db/db.json"), newNotes, "utf8", (err) => {
-        if (err) throw err;
+        if (err){
+            console.log(err.message)
+
+        }
+        else{
+            console.log(newNotes)
+        }
         
     });
 
@@ -62,9 +68,14 @@ app.post("/api/notes", function(req, res) {
     res.end();
 });
 
-//app.delete("/api/notes/:id"){
+app.put('/api/notes', function (req, res) {
+  res.send('Got a PUT request at /user')
 
-//}
+});
+
+app.delete("/api/notes/:id"){
+
+}
 
 
 // Initializes PORT to be accessed in the URL
